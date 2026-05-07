@@ -52,7 +52,7 @@ Before training, we encoded categorical variables properly to avoid bias:
 
 - manufacturer, fuel, title_status, transmission, drive, type (no natural order)
 - Creates binary columns for each category (e.g., fuel_diesel=1, fuel_electric=0)
-- Why? Avoids artificial bias (prevents model from thinking "diesel > electric" or "bmw > audi" just because of numbering)
+- This avoids artificial bias (prevents model from thinking "diesel > electric" or "bmw > audi" just because of numbering)
 
 All transformations combined in a ColumnTransformer pipeline for consistent preprocessing.
 
