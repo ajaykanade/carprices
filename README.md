@@ -2,11 +2,13 @@
 
 An ML model to predict used car prices and identify which features drive value. Built for used-car dealerships to understand their inventory better.
 
+From the get go, this looks like a "feature selection" problem
+
 ---
 
 ## Understanding the Data
 
-We started with a dataset of ~427,000 used car listings with 18 features. Here's what we found:
+Started with a dataset of ~427,000 used car listings with 18 features. Here's what we found:
 
 - **Dataset size**: 427,000 rows, 18 columns (year, manufacturer, condition, price, odometer, fuel type, transmission, drivetrain, vehicle type, paint color, title status, and more)
 - **Price range**: $0 to $10M (lots of outliers and data quality issues)
@@ -20,7 +22,7 @@ We started with a dataset of ~427,000 used car listings with 18 features. Here's
 
 ## Data Cleanup
 
-We cleaned up the data to make it useful for modeling:
+Cleaned up the data to make it useful for modeling:
 
 - **Dropped useless columns**: id, region, model, VIN, paint_color, state, size, cylinders (these don't help predict price or are redundant)
 - **Filled missing values**: manufacturer → 'unknown', fuel → 'other', transmission → 'other', drive → 'fwd', type → 'other' (kept as many rows as possible)
@@ -58,7 +60,7 @@ All transformations combined in a ColumnTransformer pipeline for consistent prep
 
 ## Modeling
 
-We built two regression models to find price drivers:
+I built two regression models (the ones taught in class) to find price drivers:
 
 **Ridge Regression (L2 Regularization)**
 
